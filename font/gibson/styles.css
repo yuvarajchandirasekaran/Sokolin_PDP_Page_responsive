@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'gibson-bold';
+  src: url(./gibson-bold.eot);
+  src: url(./gibson-bold.eot?#iefix) format('embedded-opentype'),
+       url(./gibson-bold.otf) format('otf'),
+       url(./gibson-bold.svg#gibson-bold) format('svg'),
+       url(./gibson-bold.ttf) format('truetype'),
+       url(./gibson-bold.woff) format('woff'),
+       url(./gibson-bold.woff2) format('woff2');
+}
