@@ -1147,7 +1147,6 @@ body {
   }
 }
 .pdp-container .main-container .description-overview-sec .container .inner-container .accord-title {
-  display: block;
   justify-content: space-between;
   padding-bottom: 8px;
   border-bottom: 1px solid #BABABA;
