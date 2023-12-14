@@ -730,20 +730,20 @@ body {
   margin: 20px 0;
   width: 100%;
 }
-.pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .quantity .litters-ml,
 .pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .quantity .litters {
+  cursor: pointer;
   font: bold 16px/23px var(--open-sans);
-  color: var(--primary-white);
   max-height: 36px;
   height: 100%;
-  background-color: var(--primary-red);
   padding: 7px 17px;
   margin: 0px 5px;
-}
-.pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .quantity .litters {
   border: 1px solid var(--primary-red);
   color: var(--primary-red);
   background-color: var(--primary-white);
+}
+.pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .quantity .litters.selected {
+  background-color: var(--primary-red);
+  color: var(--primary-white);
 }
 .pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .stock-avail {
   justify-content: unset;
@@ -783,6 +783,7 @@ body {
 }
 .pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .count-cart-btn .ord-qty-choose > .minus,
 .pdp-container .main-container .product-overview-sec .container .grid-container .content-3 .price-container .count-cart-btn .ord-qty-choose .plus {
+  cursor: pointer;
   font-size: 18px;
   font-weight: bold;
   border: none;
@@ -1146,11 +1147,17 @@ body {
   }
 }
 .pdp-container .main-container .description-overview-sec .container .inner-container .accord-title {
+  display: block;
   justify-content: space-between;
   padding-bottom: 8px;
   border-bottom: 1px solid #BABABA;
   margin-bottom: 20px;
-  cursor: pointer ;
+  cursor: pointer;
+}
+@media screen and (max-width: 1023px) {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .accord-title {
+    display: none;
+  }
 }
 .pdp-container .main-container .description-overview-sec .container .inner-container .accord-title h3 {
   font: 600 20px/26px var(--open-sans);
@@ -1169,78 +1176,82 @@ body {
 .pdp-container .main-container .description-overview-sec .container .inner-container .accord-title.opened > * {
   color: var(--primary-red);
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont {
+  display: none;
   padding-left: 25px;
   padding-right: 45px;
   height: unset;
 }
 @media screen and (max-width: 1023px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont {
     padding: 0;
   }
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div {
   justify-content: start;
   align-items: baseline;
   margin-bottom: 30px;
 }
 @media screen and (max-width: 1023px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div {
     flex-wrap: wrap;
     gap: 35px;
   }
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .left {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .left {
   max-width: 150px;
   width: 100%;
   margin-right: 20px;
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .left label {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .left label {
   font: bold 16px/22px var(--open-sans);
   color: var(--primary-black);
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right {
   margin: -30px 0;
   max-width: 830px;
   width: 100%;
 }
 @media screen and (max-width: 1023px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right {
     padding-left: 20px;
     padding-right: 21px;
   }
 }
 @media screen and (max-width: 1023px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right {
     padding-right: 0;
   }
 }
 @media screen and (max-width: 767px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right {
     margin-top: -30px;
   }
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right p {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right p {
   font: normal 16px/24px var(--open-sans);
   color: #454545;
   margin: 30px 0;
 }
 @media screen and (max-width: 767px) {
-  .pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .right p {
+  .pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .right p {
     margin-top: 10px;
   }
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div strong {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div strong {
   font: bold 16px/24px var(--open-sans);
   color: #454545;
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div .blue-txt {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div .blue-txt {
   color: #0088CC;
 }
-.pdp-container .main-container .description-overview-sec .container .inner-container .hided-cont > div span {
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont > div span {
   font: bold 12px/17px var(--open-sans);
   color: var(--primary-red);
   text-decoration: underline;
+}
+.pdp-container .main-container .description-overview-sec .container .inner-container .expand-cont.show {
+  display: block;
 }
 .pdp-container .main-container .body-footer .body-foot-container {
   justify-content: center;
@@ -1427,14 +1438,21 @@ body {
   color: var(--primary-white);
   letter-spacing: 1px;
   cursor: pointer;
+  justify-content: unset;
+}
+.pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-1 .heading .plus-icon,
+.pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-2 .heading .plus-icon,
+.pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-3 .heading .plus-icon {
+  display: none;
 }
 @media screen and (max-width: 1023px) {
-  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-1 .heading::before,
-  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-2 .heading::before,
-  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-3 .heading::before {
-    content: "+";
+  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-1 .heading .plus-icon,
+  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-2 .heading .plus-icon,
+  .pdp-container .footer .container .inner-container .right-links .right-top .ftr-links-container .col-3 .heading .plus-icon {
+    display: block;
     font-size: 18px;
-    margin-right: 10px;
+    margin-right: 4px;
+    width: 20px;
   }
 }
 @media screen and (max-width: 1023px) {

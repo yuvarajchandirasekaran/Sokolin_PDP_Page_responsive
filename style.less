@@ -643,21 +643,21 @@ body {
                                 margin: 20px 0;
                                 width: 100%;
 
-                                .litters-ml,
                                 .litters {
+                                    cursor: pointer;
                                     font: bold 16px/23px var(--open-sans);
-                                    color: var(--primary-white);
                                     max-height: 36px;
                                     height: 100%;
-                                    background-color: var(--primary-red);
                                     padding: 7px 17px;
                                     margin: 0px 5px;
-                                }
-
-                                .litters {
                                     border: 1px solid var(--primary-red);
                                     color: var(--primary-red);
                                     background-color: var(--primary-white);
+                                }
+
+                                .litters.selected {
+                                    background-color: var(--primary-red);
+                                    color: var(--primary-white);
                                 }
                             }
 
@@ -700,6 +700,7 @@ body {
 
                                     &>.minus,
                                     .plus {
+                                        cursor: pointer;
                                         font-size: 18px;
                                         font-weight: bold;
                                         border: none;
@@ -1104,11 +1105,17 @@ body {
                     }
 
                     .accord-title {
+                        display: block;
                         justify-content: space-between;
                         padding-bottom: 8px;
                         border-bottom: 1px solid #BABABA;
                         margin-bottom: 20px;
-                        cursor: pointer ;
+                        cursor: pointer;
+
+                        @media screen and (max-width:1023px) {
+                            display: none;
+                        }
+
                         h3 {
                             font: 600 20px/26px var(--open-sans);
                             color: var(--primary-black);
@@ -1131,7 +1138,8 @@ body {
                         }
                     }
 
-                    .hided-cont {
+                    .expand-cont {
+                        display: none;
                         padding-left: 25px;
                         padding-right: 45px;
                         height: unset;
@@ -1207,6 +1215,10 @@ body {
                                 text-decoration: underline;
                             }
                         }
+                    }
+
+                    .expand-cont.show {
+                        display: block;
                     }
                 }
             }
@@ -1388,14 +1400,20 @@ body {
                                     color: var(--primary-white);
                                     letter-spacing: 1px;
                                     cursor: pointer;
+                                    justify-content: unset;
 
-                                    @media screen and (max-width:1023px) {
-                                        &::before {
-                                            content: "+";
+                                    .plus-icon {
+                                        display: none;
+
+                                        @media screen and (max-width:1023px) {
+                                            display: block;
                                             font-size: 18px;
-                                            margin-right: 10px;
+                                            margin-right: 4px;
+                                            width: 20px;
                                         }
                                     }
+
+
                                 }
 
                                 ul {
