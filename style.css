@@ -1455,10 +1455,10 @@ body {
   border: none;
   border-bottom: 1px solid var(--primary-black);
 }
-.pdp-container .main-container .tab-function .tabs-container ul .tab-btn.active {
+.pdp-container .main-container .tab-function .tabs-container ul .tab.active {
   background-color: var(--primary-red);
 }
-.pdp-container .main-container .tab-function .tabs-container ul .tab-btn.active a {
+.pdp-container .main-container .tab-function .tabs-container ul .tab.active a {
   color: var(--primary-white);
 }
 .pdp-container .main-container .tab-function .tabs-container div {

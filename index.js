@@ -88,17 +88,22 @@ $(document).ready(function () {
   // ----------------------------------
 
   // 6.for wine detail accordian
-  // $(".accord-title").click(function () {
-  //   $(this).toggleClass('opened')
-  //   var target = $(this).data("target");
-  //   $('.expand-cont[data-target="' + target + '"]').slideToggle();
-  //   if ($('.arrow-icon[data-target="' + target + '"]').text() === 'expand_more') {
-  //     $('.arrow-icon[data-target="' + target + '"]').text('expand_less');
-  //   }
-  //   else {
-  //     $('.arrow-icon[data-target="' + target + '"]').text('expand_more');
-  //   }
-  // });
+  $(document).ready(function () {
+    $('.tab').click(function () {
+      const tabId = $(this).data('id');
+
+      // Remove 'active' class from all tabs
+      $('.tab').removeClass('active');
+      $(this).addClass('active');
+
+      // Hide all tab contents
+      $('.tab-content').hide();
+
+      // Display the clicked tab content
+      $('#' + tabId).show();
+    });
+  });
+
   $(".accord-title").click(function () {
     var target = $(this).data("target");
 
