@@ -1433,6 +1433,7 @@ body {
 }
 .pdp-container .main-container .tab-function .tabs-container {
   border: 1px solid var(--secondary-charcoal-grey);
+  height: 180px;
 }
 .pdp-container .main-container .tab-function .tabs-container ul {
   justify-content: space-around;
