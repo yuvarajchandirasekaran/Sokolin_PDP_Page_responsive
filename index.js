@@ -1,21 +1,21 @@
 // 1. cart detail view
 $(document).ready(function () {
+
   $('.cart-icon').click(function (e) {
     e.stopPropagation(); // Prevent the click event from reaching the document
-    $('.cart-detail-container').slideToggle();
+    $('.cart-detail-container').css('right', '3px') // Show cart items with animation from right to left
   });
 
   $('.close-icon').click(function () {
-    $('.cart-detail-container').slideToggle();
+    $('.cart-detail-container').css('right', '-350px') // Show cart items with animation from right to left
   });
 
   $(document).click(function (e) {
-    if (!$(e.target).closest('.cart-detail-container').length &&
-      !$(e.target).hasClass('cart-icon')) {
-      // Close the cart detail container if the click is outside and not on the cart icon
-      $('.cart-detail-container').slideUp();
+    if (!$(e.target).closest('.cart-detail-container').length && !$(e.target).hasClass('cart-icon')) {
+      $('.cart-detail-container').css('right', '-350px') // Show cart items with animation from right to left
     }
   });
+
   // ----------------------------------
 
   // 2.whistlist add
@@ -88,21 +88,6 @@ $(document).ready(function () {
   // ----------------------------------
 
   // 6.for wine detail accordian
-  $(document).ready(function () {
-    $('.tab').click(function () {
-      const tabId = $(this).data('id');
-
-      // Remove 'active' class from all tabs
-      $('.tab').removeClass('active');
-      $(this).addClass('active');
-
-      // Hide all tab contents
-      $('.tab-content').hide();
-
-      // Display the clicked tab content
-      $('#' + tabId).show();
-    });
-  });
 
   $(".accord-title").click(function () {
     var target = $(this).data("target");
@@ -129,23 +114,21 @@ $(document).ready(function () {
   // ----------------------------------
 
   // 7.tab functionality
+  $(document).ready(function () {
+    $('.tab').click(function () {
+      const tabId = $(this).data('id');
 
-  // $(document).ready(function () {
-  //   $('.tab-btn').click(function () {
-  //     const tabId = $(this).data('tab-btn');
+      // Remove 'active' class from all tabs
+      $('.tab').removeClass('active');
+      $(this).addClass('active');
 
-  //     // Remove 'active' class from all tabs
-  //     $('.tab-btn').removeClass('active');
-  //     $(this).addClass('active');
+      // Hide all tab contents
+      $('.tab-content').hide();
 
-  //     // Hide all tab contents
-  //     $('.content').hide();
-
-  //     // Display the clicked tab content
-  //     $('#' + tabId).css('display', 'none');
-  //   });
-  // });
-
+      // Display the clicked tab content
+      $('#' + tabId).show();
+    });
+  });
 
   // ----------------------------------
 
@@ -169,6 +152,8 @@ $(document).ready(function () {
     var sum = inputValue + cart;
     $('.cart-count').text(sum);
   });
+
+
   // --------------------------------------
 
   // 10.tab view menu link
@@ -178,37 +163,38 @@ $(document).ready(function () {
   // ----------------------------------
 
   // 11.Show scroll-to-top button when user scrolls down
-  window.onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      scrollToTopBtn.style.display = "block";
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+      $('.scrolltop:hidden').stop(true, true).fadeIn();
     } else {
-      scrollToTopBtn.style.display = "none";
+      $('.scrolltop').stop(true, true).fadeOut();
     }
-  }
-
-  // 12. scroll to the top when button is clicked
-  document.getElementById("scrollToTopBtn").addEventListener("click", function () {
-    scrollToTop();
   });
+  $(function () { $(".scroll").click(function () { $("html,body").animate({ scrollTop: $(".top").offset().top }, "1000"); return false }) })
 
-  function scrollToTop() {
-    var currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
-
-    if (currentPosition > 0) {
-      window.requestAnimationFrame(scrollToTop);
-      window.scrollTo(0, currentPosition - currentPosition / 8); // Adjust the divisor for speed
-    }
-  };
-
-  // 13.remove cart products
+  // 12.remove cart products
   $('.cart-del-btn').click(function () {
     // Find the parent element with class 'prod-detail' and hide it
     $(this).parent('.prod-detail').css('display', 'none');
   });
+
+
+  // 13.share pop up functionality
+
+  $(document).ready(function (e) {
+    $('.share-btn').click(function (e) {
+      e.stopPropagation(); // Prevent the click event from propagating to the document
+      $('.share-pop-up').css('display', 'block');
+      document.body.style.overflow = 'hidden';
+    });
+
+    $(document).click(function (e) {
+      if (!$(e.target).closest('.share-platforms').length) {
+        $('.share-pop-up').css('display', 'none');
+        document.body.style.overflow = 'auto';
+
+      }
+    });
+  });
+
 });
